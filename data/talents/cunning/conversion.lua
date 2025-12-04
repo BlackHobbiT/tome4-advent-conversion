@@ -117,6 +117,7 @@ newTalent {
     require = cuns_req2,
     no_energy = true,
     points = 5,
+    cooldown = 20,
     tactical = {
         CURE = function(self, t, target)
             local types = 0
