@@ -69,10 +69,10 @@ newTalent {
     require = cuns_req1,
     cooldown = 5,
     no_energy = true,
-	no_sustain_autoreset = true,
+    no_sustain_autoreset = true,
     tactical = { BUFF = 2 },
     points = 5,
-    getConversion = function(self, t) return math.min(100, math.ceil(self:getTalentLevelRaw(t) * 20)) end, -- 20-40-60-80-100
+    getConversion = function(self, t) return math.min(100, math.ceil(self:combatTalentScale(t, 40, 90))) end, -- 20-40-60-80-100
     -- getPowerLoss = function(self, t) return math.max(10, math.ceil(self:combatStatScale("cun", 35, 14, -0.5))) end, -- at least 10% power loss
     activate = function(self, t)
         game:playSoundNear(self, "talents/heal")
